@@ -1,54 +1,24 @@
-import { Button, styled, Typography } from "@mui/material";
-import { Settings, Add } from "@mui/icons-material";
-
-const BlueBtn = styled(Button)(({ theme }) => ({
-  backgroundColor: "skyblue",
-  color: "#888",
-  margin: 5,
-  "&:hover": {
-    backgroundColor: "lightblue",
-  },
-  "&:disabled": {
-    backgroundColor: "gray",
-    color: "white",
-  },
-}));
+import { Box, Container, Stack } from "@mui/material";
+import Feed from "./components/Feed";
+import Rightbar from "./components/Rightbar";
+import Sidebar from "./components/Sidebar";
 
 function App() {
   return (
-    <>
-      Hello
-      <Button color="secondary" variant="text">
-        Text
-      </Button>
-      <Button variant="contained" color="primary" startIcon={<Settings />}>
-        Settings
-      </Button>
-      <Button variant="outlined" startIcon={<Add />}>
-        Outlined
-      </Button>
-      <Typography variant="h1" component="p">
-        It is the p tag but has styles of a h1
-      </Typography>
-      <Button
-        variant="contained"
+    <Box>
+      <Stack
+        direction={"row"}
+        spacing={2}
         sx={{
-          backgroundColor: "skyblue",
-          color: "#888",
-          margin: 5,
-          "&:hover": {
-            backgroundColor: "lightblue",
-          },
-          "&:disabled": {
-            backgroundColor: "gray",
-            color: "white",
-          },
+          justifyContent: "space-between",
+          // alignItems: "center",
         }}
       >
-        Test
-      </Button>
-      <BlueBtn>A</BlueBtn>
-    </>
+        <Sidebar />
+        <Feed />
+        <Rightbar />
+      </Stack>
+    </Box>
   );
 }
 
