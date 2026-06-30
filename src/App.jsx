@@ -1,7 +1,7 @@
 import { Button, styled, Typography } from "@mui/material";
 import { Settings, Add } from "@mui/icons-material";
 
-const BlueBtn = styled(Button)({
+const BlueBtn = styled(Button)(({ theme }) => ({
   backgroundColor: "skyblue",
   color: "#888",
   margin: 5,
@@ -12,7 +12,7 @@ const BlueBtn = styled(Button)({
     backgroundColor: "gray",
     color: "white",
   },
-});
+}));
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
       <Button color="secondary" variant="text">
         Text
       </Button>
-      <Button variant="contained" color="success" startIcon={<Settings />}>
+      <Button variant="contained" color="primary" startIcon={<Settings />}>
         Settings
       </Button>
       <Button variant="outlined" startIcon={<Add />}>
